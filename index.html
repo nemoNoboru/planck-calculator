@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app='plank'>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/plank.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body ng-controller='plankCtrl as $ctrl'>
+
+  <div class="view">
+    <!-- STACK SECTION -->
+    <div class='stack'>
+      <p ng-repeat='nums in stack track by $index'>{{nums}}</p>
+    </div>
+
+    <!-- DISPLAY SECTION -->
+    <div class="display">
+      <h1>{{display}}</h1>
+      <span class="error">{{error}}</span>
+    </div>
+  </div>
+
+  <!-- BUTTON SECTION -->
+  <div class="buttons">
+    <div class="nums">
+      <button ng-click="$ctrl.add(1)">1</button>
+      <button ng-click="$ctrl.add(2)">2</button>
+      <button ng-click="$ctrl.add(3)">3</button>
+      <button ng-click="$ctrl.add(4)">4</button>
+      <button ng-click="$ctrl.add(5)">5</button>
+      <button ng-click="$ctrl.add(6)">6</button>
+      <button ng-click="$ctrl.add(7)">7</button>
+      <button ng-click="$ctrl.add(8)">8</button>
+      <button ng-click="$ctrl.add(9)">9</button>
+      <button ng-click="$ctrl.add(0)">0</button>
+    </div>
+    <div class="op">
+      <button ng-click="$ctrl.sum()">Sum</button>
+      <button ng-click="$ctrl.minus()">Minus</button>
+      <button ng-click="$ctrl.mul()">Mul</button>
+      <button ng-click="$ctrl.div()">Div</button>
+      <button ng-click="$ctrl.sqrt()">Sqrt</button>
+      <button ng-click="$ctrl.push()">Push</button>
+      <button ng-click="$ctrl.drop()">Drop</button>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src='bower_components/jquery/dist/jquery.js'></script>
+    <script src='bower_components/angular/angular.js'></script>
+    <script src='bower_components/angular-animate/angular-animate.js'></script>
+    <script src='js/planck.js'></script>
+  </body>
+</html>
