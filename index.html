@@ -6,12 +6,12 @@
     <link rel="stylesheet" href="css/plank.css" />
     <link rel="stylesheet" href="css/main.css" />
   </head>
-  <body ng-controller='plankCtrl as $ctrl'>
+  <body ng-controller='plankCtrl as $ctrl' ng-keyup='$ctrl.key($event)'>
 
   <div class="view">
     <!-- STACK SECTION -->
     <div class='stack'>
-      <p ng-repeat='nums in stack track by $index'>{{nums}}</p>
+      <p ng-repeat='nums in stack.slice().reverse() track by $index'>{{nums}}</p>
     </div>
 
     <!-- DISPLAY SECTION -->
@@ -36,6 +36,7 @@
       <button ng-click="$ctrl.add(0)">0</button>
     </div>
     <div class="op">
+      <button ng-click="$ctrl.remove()">CE</button>
       <button ng-click="$ctrl.sum()">Sum</button>
       <button ng-click="$ctrl.minus()">Minus</button>
       <button ng-click="$ctrl.mul()">Mul</button>

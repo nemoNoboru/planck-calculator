@@ -46,6 +46,7 @@ body {
   flex: 1;
   display: flex;
   min-width: 100%;
+  padding-right: 10px; 
 }
 
 .buttons .nums {
